@@ -1,0 +1,19 @@
+{
+	"name": "webfs",
+	"version": "1.0.0",
+	"main": "app.js",
+	"license": "AGPL-3.0-or-later",
+	"installConfig": {
+		"pnp": true
+	},
+	"dependencies": {
+		"@types/spdy": "^3.4.5",
+		"express": "^4.18.2",
+		"spdy": "^4.0.2"
+	},
+	"packageManager": "yarn@3.3.0",
+	"type": "module",
+	"scripts": {
+		"start": "node ."
+	}
+}
