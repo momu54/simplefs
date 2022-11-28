@@ -45,7 +45,7 @@ server.get('*', async (req, res) => {
 		res.sendStatus(400);
 		return;
 	}
-	const dir = await readdir(req.path);
+	const dir = await readdir(path);
 	const html = await readFile('dir.html');
 	const fileshtml = await Promise.all(
 		dir.map(async (item) => {
