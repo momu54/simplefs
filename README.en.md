@@ -93,6 +93,6 @@ You can follow the steps below
 
 7. connect up
 
-    Then you can connect to https://\<your IP\>:8443/?passwd=\<your password\>
-    Generally speaking, he will list the files of you and the directory
+    Then you can connect to https://\<your IP\>:8443/?passwd=\<your password\>  
+    Generally speaking, he will list the files of you and the directory  
     If not, please open an issue
