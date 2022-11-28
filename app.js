@@ -1,9 +1,13 @@
+// check env
+import 'dotenv/config';
+if (!(process.env.cert && process.env.key && process.env.passwd))
+	throw new Error('Missing environment!');
+
 import express from 'express';
 import spdy from 'spdy';
 const { createServer } = spdy;
 import { readFile, access, constants, readdir, lstat } from 'fs/promises';
 import { existsSync } from 'fs';
-import 'dotenv/config';
 
 const server = express();
 server.use(express.urlencoded({ extended: false }));
@@ -14,6 +18,10 @@ server.get('/favicon.ico', (_req, res) => {
 });
 
 server.get('/dl/*', async (req, res) => {
+	if (req.query.passwd != process.env.passwd) {
+		res.sendStatus(401);
+		return;
+	}
 	const filepath = decodeURI(req.path.replace('/dl', ''));
 	if (!existsSync(filepath)) {
 		res.sendStatus(404);
@@ -27,6 +35,10 @@ server.get('/dl/*', async (req, res) => {
 });
 
 server.get('*', async (req, res) => {
+	if (req.query.passwd != process.env.passwd) {
+		res.sendStatus(401);
+		return;
+	}
 	const path = req.path;
 	const isdir = (await lstat(path)).isDirectory();
 	if (!isdir) {
@@ -40,8 +52,9 @@ server.get('*', async (req, res) => {
 			const filepath = `${path}/${item}`.replace('//', '/');
 			try {
 				if ((await lstat(filepath)).isDirectory())
-					return `<a href="${filepath}">${item}/</a>`;
-				else return `<a href="/dl${filepath}">${item}</a>`;
+					return `<a href="${filepath}?passwd=${req.query.passwd}">${item}/</a>`;
+				else
+					return `<a href="/dl${filepath}?passwd=${req.query.passwd}">${item}</a>`;
 			} catch (error) {
 				return `<s>${item}</s>`;
 			}
