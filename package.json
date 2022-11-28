@@ -8,6 +8,7 @@
 	},
 	"dependencies": {
 		"@types/spdy": "^3.4.5",
+		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
 		"spdy": "^4.0.2"
 	},

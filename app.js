@@ -3,6 +3,7 @@ import spdy from 'spdy';
 const { createServer } = spdy;
 import { readFile, access, constants, readdir, lstat } from 'fs/promises';
 import { existsSync } from 'fs';
+import 'dotenv/config';
 
 const server = express();
 server.use(express.urlencoded({ extended: false }));
@@ -52,8 +53,8 @@ server.get('*', async (req, res) => {
 
 createServer(
 	{
-		key: await readFile('momu54.cf.key'),
-		cert: await readFile('momu54.cf.pem'),
+		key: await readFile(process.env.key || ''),
+		cert: await readFile(process.env.cert || ''),
 	},
 	server
 ).listen(8443, console.log);

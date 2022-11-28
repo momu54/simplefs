@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@types/spdy", "npm:3.4.5"],\
+            ["dotenv", "npm:16.0.3"],\
             ["express", "npm:4.18.2"],\
             ["spdy", "npm:4.0.2"]\
           ],\
@@ -228,6 +229,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/detect-node-npm-2.1.0-e8de0e94f7-832184ec45.zip/node_modules/detect-node/",\
           "packageDependencies": [\
             ["detect-node", "npm:2.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dotenv", [\
+        ["npm:16.0.3", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.3-4cc29121dc-afcf03f373.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -902,6 +912,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["webfs", "workspace:."],\
             ["@types/spdy", "npm:3.4.5"],\
+            ["dotenv", "npm:16.0.3"],\
             ["express", "npm:4.18.2"],\
             ["spdy", "npm:4.0.2"]\
           ],\

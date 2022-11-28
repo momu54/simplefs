@@ -1,2 +1,4 @@
 .yarn/cache
 momu54.cf.key
+momu54.cf.pem
+.env
