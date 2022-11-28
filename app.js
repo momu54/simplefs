@@ -60,7 +60,9 @@ server.get('*', async (req, res) => {
 			}
 		})
 	);
-	const reshtml = `${html.toString()}${fileshtml.join('<br>')}`;
+	const reshtml = `${html.toString()}<a href="./..?passwd=${
+		req.query.passwd
+	}">..</a><br>${fileshtml.join('<br>')}`;
 	res.send(reshtml);
 });
 
