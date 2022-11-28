@@ -49,11 +49,17 @@ WebDAV 設定超級無敵麻煩(對於我這個懶人來說)
     或者是用檔案總管進  
     你高興就好
 
-3. 安裝 node.js
+3. 安裝 node.js 和 yarn
 
-    到 node.js 的[官網](https://nodejs.org)  
-    下載**Current**版本 (LTS 我沒測試)  
-    並安裝
+    1. 到 node.js 的[官網](https://nodejs.org)  
+       下載**Current**版本 (LTS 我沒測試)  
+       並安裝
+
+    2. 安裝 yarn
+
+    ```pwsh
+    npm install -g yarn
+    ```
 
 4. 添加證書
 

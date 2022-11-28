@@ -51,11 +51,16 @@ You can follow the steps below
     Or use File Explorer to enter
     as long as you are happy
 
-3. Install node.js
+3. Install node.js and yarn
 
-    Go to the [official website](https://nodejs.org) of node.js
-    Download the **Current** version (LTS I haven't tested)
-    and install
+    1. Go to the [official website](https://nodejs.org) of node.js  
+       Download the **Current** version (LTS I haven't tested)  
+       and install
+
+    2. Install yarn
+        ```pwsh
+        npm install -g yarn
+        ```
 
 4. Add certificate
 
