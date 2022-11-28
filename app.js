@@ -39,7 +39,7 @@ server.get('*', async (req, res) => {
 		res.sendStatus(401);
 		return;
 	}
-	const path = req.path;
+	const path = decodeURI(req.path);
 	const isdir = (await lstat(path)).isDirectory();
 	if (!isdir) {
 		res.sendStatus(400);
