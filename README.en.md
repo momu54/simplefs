@@ -64,7 +64,7 @@ You can follow the steps below
 
 4. Add certificate
 
-    1. ~~ Find a way to get an ssl certificate~~(cough cough)  
+    1. ~~Find a way to get an ssl certificate~~(cough cough)  
        You can also self-sign the certificate, too many people on the Internet teach, I don’t need to talk about it  
        If you're too lazy to Google  
        I can help you, click [here](https://google.com/search?q=self+signed+certificate)
